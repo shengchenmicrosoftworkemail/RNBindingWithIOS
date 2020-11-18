@@ -22,6 +22,21 @@ export default function App() {
   //     </View>
   // );
 
+  //      either: Source, then Dest
+  //       <View>
+  //         <OmnichannelVideoSource/>
+  //         <OmnichannelVideoDest/>
+  //       </View>
+
+  //      or Picture in Picture with Dest inside Source
+  //       <OmnichannelVideoSource>
+  //         <OmnichannelVideoDest/>
+  //       </OmnichannelVideoSource>
+
+  // enabled only during incoming call
+  // {{ incomingCall && <Video/> }}
+
+
   return (
     <MapView style={{ flex: 1 }}/>
 );
