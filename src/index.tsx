@@ -7,3 +7,5 @@ type IosMapviewObjcType = {
 const { IosMapviewObjc } = NativeModules;
 
 export default IosMapviewObjc as IosMapviewObjcType;
+
+export {default as MapView} from './MapView';

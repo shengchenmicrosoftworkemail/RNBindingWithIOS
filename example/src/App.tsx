@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
-import IosMapviewObjc from 'react-native-ios-mapview-objc';
+import IosMapviewObjc, { MapView } from 'react-native-ios-mapview-objc';
 
 export default function App() {
   const [result, setResult] = React.useState<number | undefined>();
@@ -9,11 +9,22 @@ export default function App() {
     IosMapviewObjc.multiply(3, 7).then(setResult);
   }, []);
 
+  // return (
+  //   <View style={styles.container}>
+  //     <Text>Result: {result}</Text>
+  //   </View>
+  // );
+
+  // return (
+  //     <View style={styles.container}>
+  //       <Text> Result: {result}</Text>
+  //       <MapView style={{ flex: 1 }}/>
+  //     </View>
+  // );
+
   return (
-    <View style={styles.container}>
-      <Text>Result: {result}</Text>
-    </View>
-  );
+    <MapView style={{ flex: 1 }}/>
+);
 }
 
 const styles = StyleSheet.create({
