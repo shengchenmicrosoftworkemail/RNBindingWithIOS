@@ -16,4 +16,14 @@ RCT_REMAP_METHOD(multiply,
   resolve(result);
 }
 
+RCT_EXPORT_METHOD(createCredential:(NSString *) token
+                  createCredentialWithResolver:(RCTPromiseResolveBlock)resolve
+                  rejecter:(RCTPromiseRejectBlock)reject)
+{
+    
+//    int credential = CommunicationUserCredential(token);
+//    
+//    resolve(credential);
+}
+
 @end

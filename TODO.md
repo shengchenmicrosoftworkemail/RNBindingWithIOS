@@ -1,0 +1,1 @@
+- React Native components for reference: https://reactnative.directory/?order=recommended

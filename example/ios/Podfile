@@ -1,4 +1,9 @@
-platform :ios, '9.0'
+platform :ios, '13.0'
+
+use_modular_headers!
+plugin 'cocoapods-binary'
+
+source 'https://github.com/Azure/azure-sdk-for-ios.git'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
 def add_flipper_pods!
@@ -19,6 +24,8 @@ def flipper_post_install(installer)
     end
   end
 end
+
+
 
 target 'IosMapviewObjcExample' do
   # Pods for IosMapviewObjcExample
@@ -54,6 +61,11 @@ target 'IosMapviewObjcExample' do
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
   pod 'react-native-ios-mapview-objc', :path => '../..'
+  
+  pod 'AzureCommunicationCalling', :podspec => 'https://raw.githubusercontent.com/Azure/azure-sdk-for-ios/master/AzureCommunicationCalling.podspec'
+  pod 'AzureCommunication', :git => 'https://github.com/Azure/azure-sdk-for-ios.git', :branch => "master",  :binary => true
+  pod 'AzureCore', :git => 'https://github.com/Azure/azure-sdk-for-ios.git', :branch => "master",  :binary => true
+
 
   use_native_modules!
 
