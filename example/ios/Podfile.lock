@@ -1,9 +1,9 @@
 PODS:
-  - AzureCommunication (1.0.0-beta.5):
-    - AzureCore (~> 1.0.0-beta.5)
-  - AzureCommunicationCalling (1.0.0-beta.5):
-    - AzureCommunication (~> 1.0.0-beta.5)
-  - AzureCore (1.0.0-beta.5)
+  - AzureCommunication (1.0.0-beta.6):
+    - AzureCore (~> 1.0.0-beta.6)
+  - AzureCommunicationCalling (1.0.0-beta.6):
+    - AzureCommunication (~> 1.0.0-beta.6)
+  - AzureCore (1.0.0-beta.6)
   - boost-for-react-native (1.63.0)
   - CocoaAsyncSocket (7.6.4)
   - CocoaLibEvent (1.0.0)
@@ -304,9 +304,9 @@ PODS:
     - Yoga (~> 1.14)
 
 DEPENDENCIES:
-  - AzureCommunication (from `https://github.com/Azure/azure-sdk-for-ios.git`, branch `master`)
+  - AzureCommunication (from `https://github.com/Azure/azure-sdk-for-ios.git`)
   - AzureCommunicationCalling (from `https://raw.githubusercontent.com/Azure/azure-sdk-for-ios/master/AzureCommunicationCalling.podspec`)
-  - AzureCore (from `https://github.com/Azure/azure-sdk-for-ios.git`, branch `master`)
+  - AzureCore (from `https://github.com/Azure/azure-sdk-for-ios.git`)
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - FBLazyVector (from `../node_modules/react-native/Libraries/FBLazyVector`)
   - FBReactNativeSpec (from `../node_modules/react-native/Libraries/FBReactNativeSpec`)
@@ -359,12 +359,10 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   AzureCommunication:
-    :branch: master
     :git: https://github.com/Azure/azure-sdk-for-ios.git
   AzureCommunicationCalling:
     :podspec: https://raw.githubusercontent.com/Azure/azure-sdk-for-ios/master/AzureCommunicationCalling.podspec
   AzureCore:
-    :branch: master
     :git: https://github.com/Azure/azure-sdk-for-ios.git
   DoubleConversion:
     :podspec: "../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec"
@@ -421,16 +419,16 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   AzureCommunication:
-    :commit: 3ad0099925b644562c4922199bda2b2872e790c0
+    :commit: 144151b5336c5923a0e45439073f970f75650eef
     :git: https://github.com/Azure/azure-sdk-for-ios.git
   AzureCore:
-    :commit: 3ad0099925b644562c4922199bda2b2872e790c0
+    :commit: 144151b5336c5923a0e45439073f970f75650eef
     :git: https://github.com/Azure/azure-sdk-for-ios.git
 
 SPEC CHECKSUMS:
-  AzureCommunication: 589ce75b0255a11c9f608eb9d5ebdd182fc003f4
-  AzureCommunicationCalling: 0a3ae614967e469ebcbf7c257d162b813f65a571
-  AzureCore: 1a2f5461569c84896280e2fa5614ef6baadbbc8f
+  AzureCommunication: 645a8381f57e7e02fa3150fcce1dc8f982665840
+  AzureCommunicationCalling: 786904af217d5e071fa925aaba189185b1812fd5
+  AzureCore: f056c388ffcb745e54119d7b77cc109d79d56446
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   CocoaAsyncSocket: 694058e7c0ed05a9e217d1b3c7ded962f4180845
   CocoaLibEvent: 2fab71b8bd46dd33ddb959f7928ec5909f838e3f
@@ -470,6 +468,6 @@ SPEC CHECKSUMS:
   Yoga: 3ebccbdd559724312790e7742142d062476b698e
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: 25c1212bcfad21fed5b8d7ae129046b909d8a46e
+PODFILE CHECKSUM: 1abbe93d62a2a0be056c086eb1fffbd95109c463
 
 COCOAPODS: 1.10.0

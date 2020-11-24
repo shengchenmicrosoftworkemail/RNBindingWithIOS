@@ -1,9 +1,29 @@
 platform :ios, '13.0'
 
-use_modular_headers!
-plugin 'cocoapods-binary'
+# sheng: must use binary so the project can read .h files which are already there.
+#plugin 'cocoapods-binary'
+#use_frameworks! #sheng: this will cause all libraries to be recognized as dynamic
 
-source 'https://github.com/Azure/azure-sdk-for-ios.git'
+##https://medium.com/@joncardasis/swift-dynamic-frameworks-react-native-3d77c4972f32
+plugin 'cocoapods-user-defined-build-types'
+enable_user_defined_build_types!
+
+##https://medium.com/@acecilia/static-vs-dynamic-frameworks-in-swift-an-in-depth-analysis-ff61a77eec65
+#dynamic_frameworks = []
+## Make all the other frameworks into static frameworks by overriding the static_framework? function to return true
+#pre_install do |installer|
+#  installer.pod_targets.each do |pod|
+#    if !dynamic_frameworks.include?(pod.name)
+#      puts "Overriding the static_framework? method for #{pod.name}"
+#      def pod.static_framework?;
+#        true
+#      end
+#    end
+#  end
+#end
+
+source 'https://github.com/Azure/azure-sdk-for-ios.git' #sheng: according to Sanath this needs to be turned off to not confuse the project
+#source 'https://github.com/facebook/flipper.git'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
 def add_flipper_pods!
@@ -14,7 +34,7 @@ def add_flipper_pods!
   pod 'FlipperKit/FlipperKitUserDefaultsPlugin', version, :configuration => 'Debug'
   pod 'FlipperKit/FlipperKitReactPlugin', version, :configuration => 'Debug'
 end
-# Post Install processing for Flipper
+## Post Install processing for Flipper
 def flipper_post_install(installer)
   installer.pods_project.targets.each do |target|
     if target.name == 'YogaKit'
@@ -24,8 +44,6 @@ def flipper_post_install(installer)
     end
   end
 end
-
-
 
 target 'IosMapviewObjcExample' do
   # Pods for IosMapviewObjcExample
@@ -62,9 +80,14 @@ target 'IosMapviewObjcExample' do
 
   pod 'react-native-ios-mapview-objc', :path => '../..'
   
-  pod 'AzureCommunicationCalling', :podspec => 'https://raw.githubusercontent.com/Azure/azure-sdk-for-ios/master/AzureCommunicationCalling.podspec'
-  pod 'AzureCommunication', :git => 'https://github.com/Azure/azure-sdk-for-ios.git', :branch => "master",  :binary => true
-  pod 'AzureCore', :git => 'https://github.com/Azure/azure-sdk-for-ios.git', :branch => "master",  :binary => true
+#  pod 'AzureCommunicationCalling', :podspec => 'https://raw.githubusercontent.com/Azure/azure-sdk-for-ios/master/AzureCommunicationCalling.podspec', :build_type => :dynamic_framework
+#  pod 'AzureCommunication', :git => 'https://github.com/Azure/azure-sdk-for-ios.git', :binary => true, :build_type => :dynamic_framework
+#  pod 'AzureCore', :git => 'https://github.com/Azure/azure-sdk-for-ios.git', :binary => true, :build_type => :dynamic_framework
+
+  
+  pod 'AzureCommunicationCalling', :build_type => :dynamic_framework, :podspec => 'https://raw.githubusercontent.com/Azure/azure-sdk-for-ios/master/AzureCommunicationCalling.podspec'
+  pod 'AzureCommunication', :build_type => :dynamic_framework, :git => 'https://github.com/Azure/azure-sdk-for-ios.git' #, :binary => true
+  pod 'AzureCore', :build_type => :dynamic_framework, :git => 'https://github.com/Azure/azure-sdk-for-ios.git' #, :binary => true
 
 
   use_native_modules!
